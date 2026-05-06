@@ -1,93 +1,69 @@
-# Usage
+# Usage Examples
 
-## Install in a repo
-
-Copy `research-writing-harness/` into your project, or keep it in a shared skills directory and reference it from your implementation harness.
-
-The harness is OpenAI-style and generic:
+## Initialize only
 
 ```text
-skills/<skill_name>/SKILL.md
+Use research-writing-harness.
+Create docs/fire_mamba_ir as a flat paper workspace.
+Do not search literature.
+Do not write paper content.
 ```
 
-It is intentionally not tied to Claude Code, Codex, Gemini, or any single agent runtime. Agents that can read Markdown instructions should be able to load the router first and then progressively load only the needed task skill.
-
-## Initialize a workspace
-
-From the harness root:
-
-```bash
-python scripts/init_paper_workspace.py --slug my_paper --root docs
-```
-
-This creates:
-
-```text
-docs/my_paper/
-  README.md
-  venue_profile.md
-  paper_index.md
-  references.bib
-  claims.md
-  idea_log.md
-  intro.md
-  related_work.md
-  method.md
-  experiments.md
-  results_tables.md
-  limitations.md
-  figures.md
-  handoff.md
-  papers/
-  notes/
-```
-
-## Validate a workspace
-
-```bash
-python scripts/validate_workspace.py docs/my_paper
-python scripts/validate_paper_index.py docs/my_paper/paper_index.md
-```
-
-The validators only check structure and obvious table issues. They do not judge research quality.
-
-## Recommended invocation style
-
-Always load the router first:
-
-```text
-Use research-writing-harness router.
-Task: <specific writing/evidence task>.
-```
-
-Then specify the mode:
-
-- literature-only;
-- idea refinement;
-- venue profile;
-- repo-to-paper;
-- citation audit;
-- handoff.
-
-## Important separation rule
-
-Literature collection does not imply writing.
-
-For example, this should only update paper metadata:
+## Literature search only
 
 ```text
 Use research-writing-harness literature mode.
-Search papers for <topic> and update paper_index.md and references.bib.
-Do not write paper prose.
+Search high-quality deep learning papers related to frequency-domain attention and wavelet-based downsampling.
+Update only paper_index.md, references.bib, and reading notes.
+Do not write introduction or related work.
+Rank sources by evidence quality, not venue alone.
 ```
 
-Writing is a separate request:
+## Idea refinement
+
+```text
+Use research-writing-harness idea refinement mode.
+Current idea: [paste idea].
+Use indexed papers to suggest refinements.
+Do not modify code.
+Do not optimize for novelty alone.
+Write only to idea_log.md.
+```
+
+## Repo to method section
 
 ```text
 Use research-writing-harness repo-to-paper mode.
-Use the indexed papers and current repo to draft method.md only.
+Convert the implemented module into method.md.
+Inspect code/config first.
+Do not invent tensor shapes.
+Do not write results.
+Do not claim novelty.
+Update claims.md for nontrivial claims.
 ```
 
-## Results rule
+## Results placeholders only
 
-Do not ask the harness to invent results. It may create tables and TODO placeholders only unless actual numbers are provided.
+```text
+Use research-writing-harness.
+Create results_tables.md placeholders for my main comparison and ablation study.
+Do not fill values.
+Use TODO for all missing metrics.
+```
+
+## Citation audit
+
+```text
+Use research-writing-harness citation-audit mode.
+Check whether related_work.md citations support the claims.
+Update claims.md with unsupported or partially supported claims.
+Do not rewrite the whole section unless necessary.
+```
+
+## Paper handoff
+
+```text
+Use research-writing-harness.
+Prepare paper handoff because the method direction changed.
+Classify this as Tier A/B/C and update handoff.md only if needed.
+```

@@ -1,6 +1,6 @@
 # Results Tables
 
-Do not fill experimental results unless the user provides actual numbers.
+Experimental values must be provided by the human user or verified logs. Do not fabricate results.
 
 ## Main Comparison
 
@@ -15,12 +15,6 @@ Do not fill experimental results unless the user provides actual numbers.
 |---|---|---:|---:|---:|---|
 | Baseline | none | TODO | TODO | TODO | TODO |
 | Variant A | TODO | TODO | TODO | TODO | TODO |
-
-## Efficiency / Complexity
-
-| Method | Params | FLOPs | Latency | Memory | Hardware | Notes |
-|---|---:|---:|---:|---:|---|---|
-| TODO | TODO | TODO | TODO | TODO | TODO | TODO |
 
 ## Missing Results
 
