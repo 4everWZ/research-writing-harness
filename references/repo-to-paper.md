@@ -40,6 +40,37 @@ Prioritize this order:
 
 Do not start from a venue template. The human decides final paper composition.
 
+## Outlet-Aware Writing
+
+Before drafting any paper section, inspect the active workspace path and `venue_profile.md`.
+
+If the workspace uses `docs/<paper_slug>__<venue_slug>/`, treat the suffix as an explicit target-outlet signal. Use it to report the target outlet, but use `venue_profile.md` to determine the writing mode. If the mode is missing or undecided, state that and write in neutral academic Markdown without assuming a concrete venue style.
+
+Use only broad outlet modes, not concrete venue-specific prose templates.
+
+### Conference Mode
+
+When `venue_profile.md` indicates `conference`, write with:
+
+- sharper motivation;
+- early contribution framing;
+- compact related work;
+- concise method explanation;
+- focused experiment setup and key ablation placeholders;
+- neutral, compact limitation statements.
+
+### Journal Mode
+
+When `venue_profile.md` indicates `journal`, allow:
+
+- fuller background and problem context;
+- deeper related-work taxonomy;
+- more detailed method explanation;
+- richer experiment setup and ablation planning;
+- more explicit limitations, failure cases, and reproducibility notes.
+
+The mode changes emphasis and depth only. It must not change evidence standards, invent results, or alter the user's scientific claims.
+
 ## Method Section Rules
 
 For `method.md`, include only implementation-confirmed or explicitly intended content.

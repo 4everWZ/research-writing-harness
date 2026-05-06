@@ -50,19 +50,19 @@ research-writing-harness/
 ## Initialize a Workspace
 
 ```bash
-python scripts/init_paper_workspace.py docs/fire_mamba_ir
+python scripts/init_paper_workspace.py docs/example_paper
 ```
 
 After target venue/outlet is confirmed:
 
 ```bash
-python scripts/init_paper_workspace.py docs/fire_mamba_ir --venue CVPR --suffix-venue
+python scripts/init_paper_workspace.py docs/example_paper --venue "Target Venue" --outlet-mode conference --suffix-venue
 ```
 
 This creates:
 
 ```text
-docs/fire_mamba_ir__cvpr/
+docs/example_paper__target-venue/
   README.md
   venue_profile.md
   paper_index.md
@@ -81,10 +81,14 @@ docs/fire_mamba_ir__cvpr/
   notes/
 ```
 
+## Outlet-Aware Drafting
+
+Use `venue_profile.md` to record whether the target is `conference`, `journal`, or another outlet mode. The workspace suffix `docs/<paper_slug>__<venue_slug>/` records a confirmed target outlet, while the mode controls writing emphasis. Do not create concrete venue-specific prose templates.
+
 ## Validate
 
 ```bash
 python scripts/quick_validate_skill.py .
-python scripts/validate_workspace.py docs/fire_mamba_ir
-python scripts/validate_paper_index.py docs/fire_mamba_ir/paper_index.md
+python scripts/validate_workspace.py docs/example_paper
+python scripts/validate_paper_index.py docs/example_paper/paper_index.md
 ```

@@ -52,12 +52,12 @@ docs/<paper_slug>/
 After the target venue/outlet is confirmed, the workspace folder may be renamed with a double-underscore suffix, for example:
 
 ```text
-docs/fire_mamba_ir__cvpr/
-docs/hwdown_deim__tip/
-docs/vla_agent_eval__corl/
+docs/<paper_slug>__<venue_slug>/
 ```
 
-Use `venue_profile.md` to record venue/outlet assumptions. Do not create many venue-specific writing templates.
+Use `venue_profile.md` to record venue/outlet assumptions and the explicit writing mode: `conference`, `journal`, or another stated outlet type. Do not create many venue-specific writing templates.
+
+When a workspace uses the suffix form `docs/<paper_slug>__<venue_slug>/`, treat the suffix as an explicit outlet signal. Before drafting paper prose, read `venue_profile.md` and state which outlet-aware mode is being used. Use the mode to guide content emphasis only; do not apply a concrete venue-specific writing template.
 
 ## Core Files
 

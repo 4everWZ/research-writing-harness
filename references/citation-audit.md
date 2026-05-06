@@ -60,13 +60,13 @@ Flag these cases:
 Instead of:
 
 ```text
-Existing methods fail to model frequency-spatial interactions effectively.
+Existing methods fail to solve this problem effectively.
 ```
 
 Use a scoped version:
 
 ```text
-Several prior methods incorporate frequency-domain or spatial interaction mechanisms, but their design choices differ in where and how cross-domain information is fused.
+Several prior methods address related aspects of this problem, but they differ in assumptions, evaluation settings, and supported use cases.
 ```
 
 Then cite only papers that actually support the scoped statement.

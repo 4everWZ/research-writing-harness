@@ -4,16 +4,25 @@
 
 ```text
 Use research-writing-harness.
-Create docs/fire_mamba_ir as a flat paper workspace.
+Create docs/<paper_slug> as a flat paper workspace.
 Do not search literature.
 Do not write paper content.
+```
+
+## Initialize with confirmed outlet mode
+
+```text
+Use research-writing-harness.
+Create docs/<paper_slug>__<venue_slug> as a flat paper workspace.
+Set venue_profile.md outlet mode to conference or journal.
+Do not add concrete venue-specific writing templates.
 ```
 
 ## Literature search only
 
 ```text
 Use research-writing-harness literature mode.
-Search high-quality deep learning papers related to frequency-domain attention and wavelet-based downsampling.
+Search high-quality deep learning papers related to [topic].
 Update only paper_index.md, references.bib, and reading notes.
 Do not write introduction or related work.
 Rank sources by evidence quality, not venue alone.
@@ -36,6 +45,7 @@ Write only to idea_log.md.
 Use research-writing-harness repo-to-paper mode.
 Convert the implemented module into method.md.
 Inspect code/config first.
+Read venue_profile.md and state whether conference, journal, or neutral mode is being used.
 Do not invent tensor shapes.
 Do not write results.
 Do not claim novelty.

@@ -4,7 +4,7 @@ This workspace is a flat Markdown-based paper writing and evidence management la
 
 Core files:
 
-- `venue_profile.md`: target venue/outlet and writing assumptions.
+- `venue_profile.md`: target venue/outlet, outlet mode, and writing assumptions.
 - `paper_index.md`: indexed literature and evidence quality.
 - `references.bib`: BibTeX entries.
 - `claims.md`: claim ledger.
@@ -12,4 +12,4 @@ Core files:
 - `results_tables.md`: result table placeholders only.
 - `handoff.md`: Tier A/B paper-state handoff only.
 
-Do not treat this workspace as an autonomous research system.
+Use conference/journal mode as a content-emphasis guide only. Do not treat this workspace as an autonomous research system.

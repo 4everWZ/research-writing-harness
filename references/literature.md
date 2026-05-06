@@ -33,16 +33,24 @@ Search, filter, and summarize literature according to this hierarchy. The goal i
 
 Prefer formal peer-reviewed papers from the last 1-3 years in top venues and top journals recognized by the specific subfield.
 
-Match venues to the subfield instead of mechanically restricting all work to a few generic ML/CV conferences.
+Match venues to the target subfield instead of mechanically restricting all work to a few generic conferences or journals.
 
-Examples:
+Use `venue_profile.md` to record the relevant venue/outlet assumptions for the current paper workspace. When the target subfield is unclear, keep the search broad and explicitly mark venue assumptions as provisional.
 
-- computer vision: CVPR, ICCV, ECCV, TPAMI, IJCV, TIP, WACV, BMVC, ACM MM where relevant;
-- machine learning: NeurIPS, ICML, ICLR, JMLR, TMLR where relevant;
-- NLP / LLM: ACL, EMNLP, NAACL, TACL, COLING where relevant;
-- multimodal / VLM / VLA: relevant top-tier ML, CV, NLP, robotics, and multimodal venues;
-- robotics / embodied AI: RSS, CoRL, ICRA, IROS, RA-L, IJRR where relevant;
-- signal processing / remote sensing / IR imaging: TIP, TGRS, JSTARS, PR, TNNLS, TMM, and field-recognized venues where relevant.
+### Non-Exhaustive Venue and Journal Examples
+
+Use these examples only as search-orientation hints. They are not an allowlist, not a ranking rule, and not a substitute for evidence-quality judgment. Match the source to the subfield and current claim.
+
+- machine learning: NeurIPS, ICML, ICLR, JMLR, TMLR;
+- computer vision: CVPR, ICCV, ECCV, TPAMI, IJCV, TIP, WACV, BMVC when relevant;
+- NLP / LLM: ACL, EMNLP, NAACL, TACL, COLING when relevant;
+- multimodal / multimedia: ACM MM and relevant ML/CV/NLP venues;
+- robotics / embodied AI: RSS, CoRL, ICRA, IROS, RA-L, IJRR;
+- signal processing / remote sensing / imaging: TIP, TGRS, JSTARS, TNNLS, TMM, PR and field-recognized outlets;
+- data mining / information retrieval: KDD, WWW, SIGIR, WSDM, TKDE when relevant;
+- systems / AI infrastructure: SOSP, OSDI, NSDI, MLSys, EuroSys, ASPLOS when relevant.
+
+Do not mechanically prefer conference papers over journal papers. Conference and journal sources should both be judged by relevance, protocol clarity, baseline strength, reproducibility support, and claim-evidence alignment.
 
 Include older papers when they are:
 
@@ -147,7 +155,7 @@ firstauthorYYYYshorttopic
 Example:
 
 ```text
-zhang2024freqmamba
+smith2024shorttopic
 ```
 
 Classify `Source Priority` as:

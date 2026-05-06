@@ -2,8 +2,8 @@
 """Initialize a flat paper workspace under docs/<paper_slug>.
 
 Usage:
-  python scripts/init_paper_workspace.py docs/fire_mamba_ir
-  python scripts/init_paper_workspace.py docs/fire_mamba_ir --venue cvpr --suffix-venue
+  python scripts/init_paper_workspace.py docs/example_paper
+  python scripts/init_paper_workspace.py docs/example_paper --venue "Target Venue" --outlet-mode conference --suffix-venue
 """
 from __future__ import annotations
 
@@ -45,8 +45,14 @@ def repo_root_from_script() -> Path:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Initialize a research-writing paper workspace.")
-    parser.add_argument("workspace", help="Target workspace, e.g. docs/fire_mamba_ir")
+    parser.add_argument("workspace", help="Target workspace, e.g. docs/example_paper")
     parser.add_argument("--venue", default="", help="Optional target venue/outlet name to record in venue_profile.md")
+    parser.add_argument(
+        "--outlet-mode",
+        default="",
+        choices=["", "conference", "journal", "workshop", "thesis", "technical report", "undecided"],
+        help="Optional broad outlet mode to record in venue_profile.md",
+    )
     parser.add_argument(
         "--suffix-venue",
         action="store_true",
@@ -99,6 +105,11 @@ def main() -> int:
         text = venue_profile.read_text(encoding="utf-8")
         text = text.replace("- Target confirmed: no", "- Target confirmed: yes" if args.suffix_venue else "- Target confirmed: no")
         text = text.replace("- Target venue/outlet:", f"- Target venue/outlet: {args.venue}")
+        if args.outlet_mode:
+            text = text.replace(
+                "- mode: conference / journal / workshop / thesis / technical report / undecided",
+                f"- mode: {args.outlet_mode}",
+            )
         if args.suffix_venue:
             text = text.replace("- Workspace suffix if confirmed:", f"- Workspace suffix if confirmed: __{slugify(args.venue)}")
         venue_profile.write_text(text, encoding="utf-8")
