@@ -6,7 +6,7 @@ This harness is not a research automation system. It does not run experiments, c
 
 ## Positioning
 
-Use this harness with an implementation harness such as apex-harness or repo-level coding agents.
+Use this harness with an implementation harness such as [apex-harness](https://github.com/4everWZ/apex-harness) or repo-level coding agents.
 
 - Implementation harness: code, debugging, training, validation, experiment execution, implementation handoff.
 - research-writing-harness: paper workspace, literature index, citation evidence, venue profile, claim ledger, section drafts, writing handoff.
