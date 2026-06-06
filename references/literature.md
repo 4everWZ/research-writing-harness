@@ -18,6 +18,12 @@ For workspace creation or validation, load `references/workspace.md` instead of 
 
 For novelty, SOTA, final claim conversion, or user-confirmation boundaries, load `references/evidence-policy.md`.
 
+## Workspace Readiness
+
+If required output files or folders are missing, load `references/workspace.md` and initialize or evolve only the minimal `literature` or `idea` workspace needed for the task.
+
+Do not create full paper scaffolding for literature search, source indexing, BibTeX maintenance, reading notes, or idea refinement unless the user explicitly asks for full scaffolding.
+
 ## Workflow Boundary
 
 Literature collection must not automatically produce `intro.md`, `related_work.md`, or `method.md`.
@@ -27,11 +33,16 @@ Default outputs are limited to:
 - `paper_index.md`;
 - `references.bib`;
 - `notes/*.md`;
+- `papers/*.pdf` only when download/archive is explicitly requested;
 - `idea_log.md` when idea refinement is requested.
 
 ## Search and Extraction Policy
 
-Use `google_web_search` with domain filters (e.g., `site:arxiv.org`, `site:openreview.net`, `site:neurips.cc`) to find specific papers or trends. Use `web_fetch` to retrieve abstracts, conclusion sections, or BibTeX from raw paper pages or repository blobs.
+Use available web search and fetch tools with domain filters where supported (e.g., `site:arxiv.org`, `site:openreview.net`, `site:neurips.cc`) to find specific papers or trends.
+
+Do not invent tool names. If the current environment exposes different browsing tools, adapt to the available tools and prefer primary sources: proceedings pages, OpenReview, arXiv, DOI/publisher pages, official project pages, and official repositories.
+
+Retrieve abstracts, conclusions, BibTeX, code links, and protocol details from primary pages when possible. Use secondary summaries only as search leads, not as evidence.
 
 ## Source Hierarchy and Filtering Policy
 
@@ -40,11 +51,11 @@ Search, filter, and summarize literature according to this hierarchy. The goal i
 ### Source Priority vs. Evidence Grade
 
 - **Source Priority** (P1-P3): Objective classification of the publication venue and timing (e.g., P1 for top-tier peer-reviewed, P2 for recent arXiv).
-- **Evidence Grade** (Strong-Reject): Subjective assessment of how well the source supports the **current project's specific claims**. A top-tier paper can be "Weak" evidence if its method or evaluation settings differ significantly from the current task.
+- **Evidence Grade** (`strong`, `medium`, `weak`, `low_confidence`, `reject`): subjective assessment of how well the source supports the **current project's specific claims**. A top-tier paper can be weak evidence if its method or evaluation settings differ significantly from the current task.
 
 ### Priority 1: Core Sources
 
-Prefer formal peer-reviewed papers from the last 1-3 years in top venues and top journals recognized by the specific subfield.
+Prefer formal peer-reviewed papers from the last 1-3 years in top venues and top journals recognized by the specific subfield, plus older foundational or community-standard work when it directly supports the current claim.
 
 Match venues to the target subfield instead of mechanically restricting all work to a few generic conferences or journals.
 
@@ -75,7 +86,7 @@ Include older papers when they are:
 
 ### Priority 2: Frontier Supplement
 
-Use recent arXiv preprints from the last year only as frontier signals.
+Use recent arXiv preprints from the last year mainly as frontier signals.
 
 They may help identify:
 
@@ -84,31 +95,36 @@ They may help identify:
 - recent method families not yet stabilized by peer review;
 - active benchmark or implementation trends.
 
-For arXiv papers, prefer work from teams with a sustained record of high-quality research in the area. Assess credibility using:
+For arXiv papers, make paper-level transparency the primary criterion. Assess credibility using:
 
 - public code availability;
 - implementation detail;
 - experiment transparency;
 - strength of baselines;
 - dataset / metric / split clarity;
-- community attention;
-- signs of later acceptance or adoption.
+- time-normalized community attention;
+- signs of later acceptance or adoption;
+- author or team track record as a secondary signal.
 
-Do not use an arXiv preprint as the sole theoretical basis or sole support for a key conclusion.
+Recent preprints may support factual existence, method-context, dataset, benchmark, protocol, or implementation-trend claims when the paper itself provides enough detail.
 
-### Strict Downgrade / Exclusion
+Do not use an arXiv preprint as the sole theoretical basis or sole support for a key novelty, superiority, or final conclusion.
 
-Presumptively downgrade or exclude these sources unless the user explicitly asks to audit a specific source and strong, directly relevant evidence exists:
+### Downgrade / Exclusion Risk Signals
 
-- MDPI;
-- Hindawi;
-- Frontiers;
+Presumptively downgrade or exclude sources with one or more of these risk signals unless the user explicitly asks to audit a specific source and strong, directly relevant evidence exists:
+
+- publisher, journal, or venue family has a weak or disputed reputation in the target subfield;
 - low-quality isolated preprints;
 - papers without reproducibility support;
 - papers without meaningful citation or community uptake;
 - marketing-like sources;
 - sources with unclear academic consensus;
 - works with weak baselines, unclear metrics, or unverifiable claims.
+
+Publisher or venue family can be a risk signal, but it is not a substitute for paper-level evidence review.
+
+Do not use publisher identity alone as the reason to reject a paper.
 
 These sources must not be used as:
 
@@ -157,7 +173,7 @@ Judge every candidate source by:
 
 ## Paper Index Rules
 
-Update `paper_index.md` for every selected source.
+Update `paper_index.md` for every selected source and for evaluated `downgraded` or `excluded` sources that materially affected the search, filtering decision, or paper narrative.
 
 Use stable citation keys. Prefer:
 
@@ -173,11 +189,11 @@ smith2024shorttopic
 
 Classify `Source Priority` as:
 
-- `P1_core`;
-- `P2_frontier`;
-- `P3_background`;
-- `downgraded`;
-- `excluded`.
+- `P1_core`: recent core peer-reviewed work or older foundational/standard work;
+- `P2_frontier`: recent frontier signal, usually arXiv or newly emerging work;
+- `P3_background`: useful context, dataset, metric, survey, or non-central reference;
+- `downgraded`: weak evidence, mention only with explicit caveat if needed;
+- `excluded`: not used as evidence.
 
 Classify `Evidence Grade` as:
 
@@ -196,6 +212,16 @@ Classify `Role` as:
 - `dataset_metric_reference`;
 - `implementation_reference`;
 - `weak_signal`.
+
+## BibTeX Rules
+
+Update `references.bib` for selected sources that may be cited, using the same citation key as `paper_index.md`.
+
+Prefer BibTeX from official proceedings pages, OpenReview, arXiv, DOI/publisher pages, or the paper's official repository.
+
+Do not fabricate BibTeX fields. If metadata is unavailable, include only verified fields and mark missing information in `paper_index.md` or the relevant reading note.
+
+Keep `references.bib` and `paper_index.md` synchronized when renaming citation keys.
 
 ## Reading Notes
 
@@ -242,4 +268,4 @@ When reporting to the user, structure the response as:
 3. What was rejected or downgraded;
 4. Why the selected papers matter;
 5. Caveats;
-6. Files updated.
+6. Files updated or read-only status.

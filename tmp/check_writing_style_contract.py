@@ -48,6 +48,8 @@ def main() -> int:
             "Public prose vs internal ledger",
             "Limitations and caveats",
             "Research taste",
+            "Do not omit material limitations",
+            "load `references/evidence-policy.md`",
         ],
     )
     require_contains(

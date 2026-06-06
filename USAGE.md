@@ -64,6 +64,8 @@ Update claims.md for nontrivial claims.
 
 ```text
 Use academic-research-harness.
+Load references/repo-to-paper.md.
+Initialize or evolve the workspace with --mode repo-to-paper only if results_tables.md is missing.
 Create results_tables.md placeholders for my main comparison and ablation study.
 Do not fill values.
 Use TODO for all missing metrics.

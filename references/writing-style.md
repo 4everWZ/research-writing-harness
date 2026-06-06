@@ -56,7 +56,11 @@ The manuscript should contain only the public-facing handling selected for each 
 - `omit_from_public_prose`: keep as internal risk or future work planning;
 - `needs_user_decision`: ask before changing framing.
 
+Do not omit material limitations that affect validity, reproducibility, comparison fairness, safety, or interpretation. `omit_from_public_prose` is for non-material, speculative, or planning-only reviewer-risk notes.
+
 Risk tracking is not prose drafting. A real concern can be true and still not belong in a contribution paragraph.
+
+If a revision changes contribution framing, load `references/evidence-policy.md` and follow its user-confirmation checkpoints.
 
 ## Limitations and caveats
 

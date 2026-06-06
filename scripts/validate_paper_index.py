@@ -22,8 +22,9 @@ EXPECTED_COLUMNS = [
     "URL/DOI",
 ]
 
-VALID_PRIORITIES = {"P1_core", "P2_frontier", "P3_background", "downgraded", "excluded", "TODO"}
-VALID_GRADES = {"strong", "medium", "weak", "low_confidence", "reject", "TODO"}
+VALID_PRIORITIES = {"P1_core", "P2_frontier", "P3_background", "downgraded", "excluded"}
+VALID_GRADES = {"strong", "medium", "weak", "low_confidence", "reject"}
+VALID_CODE = {"yes", "no", "unknown"}
 VALID_ROLES = {
     "baseline",
     "competing_method",
@@ -32,7 +33,6 @@ VALID_ROLES = {
     "dataset_metric_reference",
     "implementation_reference",
     "weak_signal",
-    "TODO",
 }
 
 
@@ -51,7 +51,7 @@ def validate_enum(
 ) -> None:
     if value in valid_values:
         return
-    if allow_template_placeholder and "/" in value:
+    if allow_template_placeholder and ("/" in value or value == "TODO"):
         return
     errors.append(f"line {line_number}: unexpected {field}: {value}")
 
@@ -67,12 +67,12 @@ def main() -> int:
         return 1
 
     lines = path.read_text(encoding="utf-8").splitlines()
-    table_lines = [line for line in lines if line.strip().startswith("|")]
+    table_lines = [(line_number, line) for line_number, line in enumerate(lines, start=1) if line.strip().startswith("|")]
     if len(table_lines) < 2:
         print("paper_index validation failed: no Markdown table found")
         return 1
 
-    header = split_row(table_lines[0])
+    header = split_row(table_lines[0][1])
     if header != EXPECTED_COLUMNS:
         print("paper_index validation failed: unexpected header")
         print("Expected:", EXPECTED_COLUMNS)
@@ -82,7 +82,7 @@ def main() -> int:
     keys: set[str] = set()
     errors: list[str] = []
 
-    for idx, line in enumerate(table_lines[2:], start=3):
+    for idx, line in table_lines[2:]:
         cells = split_row(line)
         if len(cells) != len(EXPECTED_COLUMNS):
             errors.append(f"line {idx}: expected {len(EXPECTED_COLUMNS)} cells, got {len(cells)}")
@@ -110,6 +110,14 @@ def main() -> int:
             field="Evidence Grade",
             value=row["Evidence Grade"],
             valid_values=VALID_GRADES,
+            allow_template_placeholder=allow_template_placeholder,
+        )
+        validate_enum(
+            errors,
+            line_number=idx,
+            field="Code",
+            value=row["Code"],
+            valid_values=VALID_CODE,
             allow_template_placeholder=allow_template_placeholder,
         )
         validate_enum(

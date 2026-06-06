@@ -24,9 +24,9 @@ Create files progressively by task route. Do not create full paper-section scaff
 | `literature` | literature search, paper indexing, BibTeX, reading notes | `README.md`, `venue_profile.md`, `paper_index.md`, `references.bib`, `papers/`, `notes/` |
 | `idea` | literature-grounded idea refinement | literature files plus `idea_log.md` |
 | `citation-audit` | claim/citation checking without section drafting | `README.md`, `venue_profile.md`, `claims.md` |
-| `repo-to-paper` | converting repo/code/config into paper sections | full paper workspace |
+| `repo-to-paper` | converting repo/code/config into paper sections | paper-section scaffold: `README.md`, `venue_profile.md`, `paper_index.md`, `references.bib`, `claims.md`, section files, `figures.md`, `papers/`, `notes/` |
 | `handoff` | paper-state handoff only | `README.md`, `venue_profile.md`, `handoff.md` |
-| `full` | user explicitly requests complete paper workspace | full paper workspace |
+| `full` | user explicitly requests complete paper workspace | all route-state files and paper-section files |
 
 **Note:** "Workspace Mode" (above) defines the current task's scope and file structure. "Outlet Mode" (defined in `venue_profile.md`) defines the target writing style (e.g., `conference`, `journal`). Do not confuse the two.
 
@@ -74,6 +74,7 @@ Read-only validation:
 
 ```bash
 python scripts/validate_workspace.py docs/<paper_slug> --mode literature
+python scripts/validate_workspace.py docs/<paper_slug> --mode literature --strict
 python scripts/validate_paper_index.py docs/<paper_slug>/paper_index.md
 ```
 

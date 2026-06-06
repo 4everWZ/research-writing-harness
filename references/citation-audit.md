@@ -8,6 +8,8 @@ For workspace creation or validation, load `references/workspace.md`.
 
 For global result, novelty, SOTA, and confirmation boundaries, load `references/evidence-policy.md` when the audit needs the shared policy.
 
+For source-quality, downgraded-source, arXiv-only, or venue-prestige checks, load only the necessary evidence files: `paper_index.md`, `references.bib`, relevant reading notes, and exact cited sources. Load `references/literature.md` only when source-priority or evidence-grade rules are needed.
+
 ## Core Principle
 
 A citation is valid only if it supports the exact claim being made.
@@ -42,9 +44,10 @@ Claims marked `unsupported` or `speculative` must not appear as final conclusion
 2. Extract nontrivial claims.
 3. Match each claim to `claims.md` when possible.
 4. Check whether cited sources directly support the claim.
-5. Downgrade overbroad claims.
-6. Mark missing evidence.
-7. Suggest precise revisions.
+5. Check source quality and source role when the claim depends on literature support.
+6. Downgrade overbroad claims.
+7. Mark missing evidence.
+8. Suggest precise revisions.
 
 ## Common Failure Modes
 
@@ -54,7 +57,7 @@ Flag these cases:
 - citation is based only on the abstract;
 - novelty claim ignores recent strong work;
 - SOTA claim does not match dataset, split, metric, or protocol;
-- method superiority is claimed without user-provided results;
+- method superiority is claimed without user-provided results or verified logs;
 - weak or downgraded sources are used as key evidence;
 - arXiv is used as the only support for a central theoretical claim;
 - venue prestige is used as evidence quality.

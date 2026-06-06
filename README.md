@@ -126,3 +126,5 @@ python tmp/quick_validate_skill.py .
 python scripts/validate_workspace.py docs/example_paper --mode literature
 python scripts/validate_paper_index.py docs/example_paper/paper_index.md
 ```
+
+`tmp/quick_validate_skill.py` is a package-maintainer check for this skill folder. Runtime workspace commands stay under `scripts/`.

@@ -2,7 +2,7 @@
 
 This workspace is a flat Markdown-based paper writing and evidence management layer.
 
-Core files:
+Possible files:
 
 - `venue_profile.md`: target venue/outlet, outlet mode, and writing assumptions.
 - `paper_index.md`: indexed literature and evidence quality.

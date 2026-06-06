@@ -30,12 +30,27 @@ FULL_TEMPLATES = [
     "handoff.md",
 ]
 
+PAPER_SECTION_TEMPLATES = [
+    "README.md",
+    "venue_profile.md",
+    "paper_index.md",
+    "references.bib",
+    "claims.md",
+    "intro.md",
+    "related_work.md",
+    "method.md",
+    "experiments.md",
+    "results_tables.md",
+    "limitations.md",
+    "figures.md",
+]
+
 MODE_TEMPLATES = {
     "minimal": ["README.md", "venue_profile.md"],
     "literature": ["README.md", "venue_profile.md", "paper_index.md", "references.bib"],
     "idea": ["README.md", "venue_profile.md", "paper_index.md", "references.bib", "idea_log.md"],
     "citation-audit": ["README.md", "venue_profile.md", "claims.md"],
-    "repo-to-paper": FULL_TEMPLATES,
+    "repo-to-paper": PAPER_SECTION_TEMPLATES,
     "handoff": ["README.md", "venue_profile.md", "handoff.md"],
     "full": FULL_TEMPLATES,
 }
@@ -132,17 +147,18 @@ def main() -> int:
                 encoding="utf-8",
             )
 
-    if args.venue:
+    if args.venue or args.outlet_mode:
         venue_profile = workspace / "venue_profile.md"
         text = venue_profile.read_text(encoding="utf-8")
-        text = text.replace("- Target confirmed: no", "- Target confirmed: yes" if args.suffix_venue else "- Target confirmed: no")
-        text = text.replace("- Target venue/outlet:", f"- Target venue/outlet: {args.venue}")
+        if args.venue:
+            text = text.replace("- Target confirmed: no", "- Target confirmed: yes" if args.suffix_venue else "- Target confirmed: no")
+            text = text.replace("- Target venue/outlet:", f"- Target venue/outlet: {args.venue}")
         if args.outlet_mode:
             text = text.replace(
                 "- mode: conference / journal / workshop / thesis / technical report / undecided",
                 f"- mode: {args.outlet_mode}",
             )
-        if args.suffix_venue:
+        if args.venue and args.suffix_venue:
             text = text.replace("- Workspace suffix if confirmed:", f"- Workspace suffix if confirmed: __{slugify(args.venue)}")
         venue_profile.write_text(text, encoding="utf-8")
 

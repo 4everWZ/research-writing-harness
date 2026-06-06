@@ -32,7 +32,7 @@ Before writing, distinguish:
 - assumption;
 - unverified.
 
-**Log Probing:** Use `grep_search` and `list_directory` to find evidence in common experiment folders (`logs/`, `runs/`, `results/`). Verify that logs match the current version of the code and config.
+**Log Probing:** Use available local search and directory-listing tools to find evidence in common experiment folders (`logs/`, `runs/`, `results/`). Verify that logs match the current version of the code and config. Do not invent tool names.
 
 Do not invent tensor shapes, modules, equations, training settings, datasets, metrics, losses, or results.
 
@@ -93,6 +93,10 @@ When `venue_profile.md` indicates `journal`, allow:
 - more explicit limitations, failure cases, and reproducibility notes.
 - more space for interpretive boundaries without converting the paper into rebuttal prose.
 
+### Other Outlet Modes
+
+For workshop, thesis, technical report, undecided, or other modes, use `venue_profile.md`'s expected audience and style notes. If those notes are missing, write neutral academic Markdown and state that the outlet style is unresolved.
+
 The mode changes emphasis and depth only. It must not change evidence standards, invent results, or alter the user's scientific claims.
 
 ## Method Section Rules
@@ -137,7 +141,7 @@ Do not change metric, split, protocol, or baseline framing without user confirma
 
 ## Results Policy
 
-Do not write results unless the user gives numbers.
+Do not write results unless the user provides numbers or you verify matching logs.
 
 For `results_tables.md`, only:
 
@@ -147,7 +151,7 @@ For `results_tables.md`, only:
 - mark values as `TODO`;
 - list missing experiments.
 
-Avoid interpretive wording such as "outperforms", "achieves SOTA", or "significantly improves" unless the user provides validated evidence.
+Avoid interpretive wording such as "outperforms", "achieves SOTA", or "significantly improves" unless user-provided results or verified logs support that exact claim under the same dataset, split, metric, and protocol.
 
 ## Introduction and Related Work Rules
 
