@@ -47,6 +47,14 @@ For every nontrivial claim, distinguish whether support comes from:
 
 Claims marked unsupported or speculative must not appear as final conclusions.
 
+## Evidence vs Prose Tone
+
+Evidence control is not rebuttal prose.
+
+Keep unsupported claims out of final conclusions without automatically promoting every risk into the manuscript.
+
+Use the claim ledger to track risks, missing evidence, and reviewer-sensitive issues. In public prose, expose only the handling that improves reader interpretation: direct statement, compact scope boundary, limitations placement, or omission from public prose.
+
 ## Results
 
 Do not write experimental results unless the user provides numbers or verified logs.

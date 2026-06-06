@@ -122,7 +122,7 @@ Use `venue_profile.md` to record whether the target is `conference`, `journal`, 
 ## Validate
 
 ```bash
-python scripts/quick_validate_skill.py .
+python tmp/quick_validate_skill.py .
 python scripts/validate_workspace.py docs/example_paper --mode literature
 python scripts/validate_paper_index.py docs/example_paper/paper_index.md
 ```

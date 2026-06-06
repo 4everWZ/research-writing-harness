@@ -75,7 +75,6 @@ Read-only validation:
 ```bash
 python scripts/validate_workspace.py docs/<paper_slug> --mode literature
 python scripts/validate_paper_index.py docs/<paper_slug>/paper_index.md
-python scripts/quick_validate_skill.py .
 ```
 
 Do not add or rely on scripts that scrape Google Scholar, automatically summarize PDFs, or automatically write related work.

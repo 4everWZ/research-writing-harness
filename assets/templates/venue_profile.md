@@ -24,6 +24,7 @@ Use when the target is a conference paper, short-format submission, or similarly
 - experiments: focus on strong baselines, key ablations, and fair protocol;
 - limitations: honest but concise;
 - writing risk: avoid over-expanding background or diluting the main claim.
+- defensive prose: low density; avoid turning contribution framing into rebuttal.
 
 ## Journal-Style Emphasis
 
@@ -37,6 +38,13 @@ Use when the target is a journal paper, long-format article, or similarly expans
 - limitations: explicit and detailed;
 - reproducibility: stronger implementation, protocol, and supplementary detail;
 - writing risk: avoid excessive novelty framing without evidence.
+- defensive prose: allowed only for real interpretive boundaries, not every possible attack point.
+
+## Writing Taste
+
+- taste focus: central contribution, strongest evidence, and reader value;
+- omit minor adjacent paths unless they affect interpretation, reproducibility, or claim support;
+- keep reviewer-risk inventory in `claims.md` unless public prose needs it.
 
 ## Venue Examples
 

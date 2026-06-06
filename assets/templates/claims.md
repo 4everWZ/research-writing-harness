@@ -25,5 +25,11 @@ TODO
 **Risk:**
 TODO
 
+**Public-facing handling:**
+state_directly / scope_briefly / move_to_limitations / omit_from_public_prose / needs_user_decision
+
+**Internal review notes:**
+TODO
+
 **Allowed in final paper?**
 yes / no / only_with_caveat

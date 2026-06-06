@@ -8,6 +8,8 @@ For workspace creation or validation, load `references/workspace.md`.
 
 For novelty, SOTA, superiority, result interpretation, or contribution-framing decisions, load `references/evidence-policy.md`.
 
+For writing style, contribution framing, limitation placement, or defensive-prose decisions, load `references/writing-style.md`.
+
 Supported target files:
 
 - `intro.md` only when the user explicitly asks for introduction writing;
@@ -46,6 +48,20 @@ Prioritize this order:
 
 Do not start from a venue template. The human decides final paper composition.
 
+## Paper-Prose Mode
+
+When drafting manuscript text, default to paper-prose mode rather than rebuttal mode.
+
+In paper-prose mode:
+
+- state what the implementation does;
+- connect the mechanism to the paper's problem;
+- scope claims to available evidence;
+- keep internal reviewer-risk notes in `claims.md`;
+- Do not turn every possible reviewer objection into visible prose.
+
+Use rebuttal-style defensive writing only when the user explicitly asks for reviewer response, rebuttal, response letter, or point-by-point revision text.
+
 ## Outlet-Aware Writing
 
 Before drafting any paper section, inspect the active workspace path and `venue_profile.md`.
@@ -64,6 +80,7 @@ When `venue_profile.md` indicates `conference`, write with:
 - concise method explanation;
 - focused experiment setup and key ablation placeholders;
 - neutral, compact limitation statements.
+- low defensive-prose density.
 
 ### Journal Mode
 
@@ -74,6 +91,7 @@ When `venue_profile.md` indicates `journal`, allow:
 - more detailed method explanation;
 - richer experiment setup and ablation planning;
 - more explicit limitations, failure cases, and reproducibility notes.
+- more space for interpretive boundaries without converting the paper into rebuttal prose.
 
 The mode changes emphasis and depth only. It must not change evidence standards, invent results, or alter the user's scientific claims.
 

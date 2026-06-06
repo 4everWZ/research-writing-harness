@@ -1,13 +1,13 @@
 # Limitations Draft
 
-## Confirmed Limitations
+## Interpretive Boundaries
 
 - TODO
 
-## Likely Limitations Requiring Evidence
+## Reader Impact
 
 - TODO
 
-## Claims Not Yet Allowed
+## Follow-up Work
 
 - TODO

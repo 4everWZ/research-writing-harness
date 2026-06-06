@@ -11,6 +11,7 @@ NAME_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,62}[a-z0-9]$")
 REQUIRED_REFERENCES = [
     "references/workspace.md",
     "references/evidence-policy.md",
+    "references/writing-style.md",
     "references/literature.md",
     "references/repo-to-paper.md",
     "references/citation-audit.md",
@@ -39,7 +40,6 @@ REQUIRED_SCRIPTS = [
     "scripts/init_paper_workspace.py",
     "scripts/validate_workspace.py",
     "scripts/validate_paper_index.py",
-    "scripts/quick_validate_skill.py",
 ]
 
 
