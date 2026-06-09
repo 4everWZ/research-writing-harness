@@ -47,6 +47,7 @@ academic-research-harness/
 
 - `workspace.md`: workspace modes, scripts, validation, venue suffixes.
 - `literature.md`: paper search, indexing, reading notes, idea refinement.
+- `source-quality.md`: freshness, venue priority, arXiv credibility, and downgrade rules.
 - `repo-to-paper.md`: code/config to paper sections.
 - `citation-audit.md`: claim and citation checking.
 - `handoff.md`: paper-state handoff.

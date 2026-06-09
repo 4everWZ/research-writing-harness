@@ -6,7 +6,7 @@ Use this reference to check whether citations support the exact claims made in a
 
 For workspace creation or validation, load `references/workspace.md`.
 
-For novelty, SOTA, result wording, or source-quality policy, load only the needed evidence files and the relevant shared reference.
+For novelty, SOTA, result wording, or source-quality policy, load only the needed evidence files and the relevant shared reference. Use `references/source-quality.md` for source freshness, priority, and downgrade checks.
 
 ## Core Principle
 

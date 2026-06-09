@@ -18,6 +18,7 @@ def main() -> int:
             "complete scaffolding",
             "notes/<citation_key>.md",
             "papers/*.pdf",
+            "references/source-quality.md",
             "`paper_index.md`, `references.bib`, relevant notes/sources",
             "contribution framing",
         ],
@@ -34,6 +35,7 @@ def main() -> int:
         "references/citation-audit.md": [
             "needed evidence files",
             "relevant shared reference",
+            "references/source-quality.md",
             "user-provided results or verified logs",
         ],
         "agents/openai.yaml": [

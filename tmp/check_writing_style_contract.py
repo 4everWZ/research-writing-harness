@@ -152,7 +152,8 @@ def main() -> int:
 
     for relative, limit in {
         "SKILL.md": 650,
-        "references/literature.md": 1200,
+        "references/literature.md": 750,
+        "references/source-quality.md": 550,
         "references/repo-to-paper.md": 850,
         "references/evidence-policy.md": 450,
         "references/workspace.md": 550,

@@ -18,17 +18,9 @@ def main() -> int:
         "Use available search/fetch tools",
         "Do not invent tool names",
         "minimal `literature` or `idea` workspace",
+        "references/source-quality.md",
         "BibTeX Rules",
         "Do not fabricate BibTeX fields",
-        "`P1_core`",
-        "`P2_frontier`",
-        "`P3_background`",
-        "Freshness Weighting",
-        "Default search weight favors the last 3-5 years",
-        "Older sources need a role",
-        "Publisher identity is a signal, not a verdict.",
-        "paper-level transparency the primary criterion",
-        "factual existence, method-context, dataset, benchmark, protocol, or implementation-trend claims",
         "Files updated or read-only status",
     ]
     forbidden = [

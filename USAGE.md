@@ -21,6 +21,7 @@ Set venue_profile.md outlet mode to conference or journal.
 
 ```text
 Load references/literature.md.
+Load references/source-quality.md when filtering or classifying sources.
 Search high-quality deep learning papers related to [topic].
 Update only paper_index.md, references.bib, and reading notes.
 Rank sources by evidence quality, not venue alone.

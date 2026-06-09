@@ -27,6 +27,7 @@ Create workspaces progressively. Use `full` only when the user asks for complete
 |---|---|---|---|
 | Initialize or validate a paper workspace | `references/workspace.md` | requested mode, default `minimal` | only files being created or checked |
 | Search, collect, index, download, classify, or summarize papers | `references/literature.md` | `literature` | `paper_index.md`, `references.bib`, `notes/<citation_key>.md`, and `papers/*.pdf` only when writing/downloading them |
+| Judge source freshness, venue priority, arXiv credibility, or downgrade/exclusion | `references/source-quality.md` | `literature` or `citation-audit` | `paper_index.md` or audited claim evidence only |
 | Refine an idea using papers | `references/literature.md` | `idea` | `idea_log.md` only when writing it |
 | Convert repo/code/config/logged setup into paper sections | `references/repo-to-paper.md` | `repo-to-paper` | only the requested section template plus `claims.md` when adding claims |
 | Create result tables or placeholders | `references/repo-to-paper.md` | `repo-to-paper` | `results_tables.md` |
@@ -38,6 +39,7 @@ Create workspaces progressively. Use `full` only when the user asks for complete
 ## Shared Rules
 
 - For workspace creation, validation, mode selection, and scripts, load `references/workspace.md`.
+- For source freshness, venue priority, arXiv credibility, or downgrade/exclusion, load `references/source-quality.md`.
 - For novelty, SOTA, superiority, results, contribution framing, claim support, or user-confirmation boundaries, load `references/evidence-policy.md`.
 - For writing style, contribution framing, limitation placement, or over-defensive prose, load `references/writing-style.md`.
 - If a task spans routes, load the relevant references but keep template loading minimal.

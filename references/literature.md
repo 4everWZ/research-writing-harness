@@ -34,99 +34,11 @@ Use available search/fetch tools with domain filters where supported. Do not inv
 
 Prefer primary sources: proceedings pages, OpenReview, arXiv, DOI/publisher pages, official project pages, and official repositories. Use secondary summaries only as search leads.
 
-## Freshness Weighting
+## Source Quality Route
 
-Default search weight favors the last 3-5 years, and the last 1-2 years for fast-moving areas such as LLMs, multimodal models, and active benchmarks.
-
-Older sources need a role: foundational method, standard baseline, dataset/metric/protocol reference, survey context, or direct support for a specific claim. Do not include old papers merely because they are topically related.
-
-## Source Hierarchy and Filtering Policy
-
-Search and filter by role in the current paper, not by venue prestige alone.
-
-### Source Priority vs. Evidence Grade
-
-- **Source Priority**: venue/timing role (`P1_core`, `P2_frontier`, `P3_background`, `downgraded`, `excluded`).
-- **Evidence Grade**: how directly the source supports the current claim (`strong`, `medium`, `weak`, `low_confidence`, `reject`).
-
-### Priority 1: Core Sources
-
-Prefer recent peer-reviewed work from venues recognized by the subfield, plus older foundational or community-standard work when it directly supports the claim.
+For source freshness, priority labels, arXiv credibility, venue risk, or downgrade/exclusion decisions, load `references/source-quality.md`.
 
 Use `venue_profile.md` to record subfield and outlet assumptions. If the subfield is unclear, keep assumptions provisional.
-
-### Non-Exhaustive Venue and Journal Examples
-
-Use these only as search-orientation hints, not as an allowlist or ranking rule.
-
-- machine learning: NeurIPS, ICML, ICLR, JMLR, TMLR;
-- computer vision: CVPR, ICCV, ECCV, TPAMI, IJCV, TIP, WACV, BMVC when relevant;
-- NLP / LLM: ACL, EMNLP, NAACL, TACL, COLING when relevant;
-- multimodal / multimedia: ACM MM and relevant ML/CV/NLP venues;
-- robotics / embodied AI: RSS, CoRL, ICRA, IROS, RA-L, IJRR;
-- signal processing / remote sensing / imaging: TIP, TGRS, JSTARS, TNNLS, TMM, PR and field-recognized outlets;
-- data mining / information retrieval: KDD, WWW, SIGIR, WSDM, TKDE when relevant;
-- systems / AI infrastructure: SOSP, OSDI, NSDI, MLSys, EuroSys, ASPLOS when relevant.
-
-Judge conference and journal sources by relevance, protocol clarity, baseline strength, reproducibility support, and claim-evidence alignment.
-
-Include older papers when they are:
-
-- foundational work;
-- strong baselines;
-- community-standard methods;
-- widely used datasets, metrics, or evaluation protocols;
-- still directly relevant to the current method or writing claim.
-
-### Priority 2: Frontier Supplement
-
-Use recent arXiv preprints mainly as frontier signals. They help identify:
-
-- emerging trends;
-- newly forming research directions;
-- recent method families not yet stabilized by peer review;
-- active benchmark or implementation trends.
-
-For arXiv papers, make paper-level transparency the primary criterion:
-
-- public code availability;
-- implementation detail;
-- experiment transparency;
-- strength of baselines;
-- dataset / metric / split clarity;
-- time-normalized community attention or later acceptance/adoption;
-- author or team track record as a secondary signal.
-
-Recent preprints may support factual existence, method-context, dataset, benchmark, protocol, or implementation-trend claims. Do not use one as the sole support for key novelty, superiority, or final conclusions.
-
-### Downgrade / Exclusion Risk Signals
-
-Downgrade sources when paper-level evidence is weak: unclear protocol, weak baselines, unverifiable claims, no reproducibility support, marketing-like framing, isolated low-quality preprints, or disputed venue/publisher fit in the target subfield.
-
-Publisher identity is a signal, not a verdict. Reject or downgrade because the paper cannot support the claim, and mark any retained weak source as low-confidence or auxiliary.
-
-### Evidence Quality Overrides Venue Rank
-
-Venue rank alone is not evidence. A top-venue paper can still be weak evidence if:
-
-- the comparison is unfair;
-- the metric or split is unclear;
-- the baseline is weak;
-- the code is unavailable and implementation details are insufficient;
-- the claim is stronger than the experiments support.
-
-A journal paper, older paper, or non-top-venue paper can still be useful if:
-
-- the method is clear;
-- the logic is rigorous;
-- the evaluation is transparent;
-- the baseline is strong;
-- the work is a community-standard reference;
-- the claim directly supports the current paper.
-
-### Final Judgment Criteria
-
-For each candidate, record the role it can actually play: baseline, competing method, mechanism support, dataset/metric reference, implementation reference, background, or weak signal. Grade by relevance, protocol clarity, baseline strength, reproducibility support, and claim-evidence alignment.
 
 ## Paper Index Rules
 
